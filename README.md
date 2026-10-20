@@ -78,7 +78,35 @@ Key implementations include:
 
 ### Programming Concepts Demonstrated
 
+### Collectible Interaction System
+
+The `ChickenCollect.cs` script implements collectible-object interactions using Unity's trigger detection system.
+
+Key programming features include:
+
+- **Trigger Detection:** Uses `OnTriggerEnter()` to detect when another collider enters the collectible's trigger.
+- **Tag Validation:** Uses `CompareTag("Player")` to verify that the interacting object is the player.
+- **Script Communication:** References the `ScoreManager` component and calls its `AddChicken()` method to update the collection count.
+- **Object Management:** Uses `Destroy(gameObject)` to remove the collectible after a successful interaction.
+- **Modular Programming:** Separates collectible interactions from score management to organize gameplay logic.
+
+This script demonstrates C# methods, conditional statements, Unity components, object references, and event-driven programming.
+
 C# classes, variables, access modifiers, methods, conditional statements, comparison operators, Unity event methods, object references, and gameplay state management.
+
+### Score Management and User Interface
+
+The `ScoreManager.cs` script manages the player's chicken collection score and updates the on-screen display using Unity's TextMesh Pro system.
+
+Key implementations include:
+
+- **Score Initialization:** Initializes the player's score at zero.
+- **Score Incrementing:** Uses the `AddChicken()` method to increase the score when a chicken is collected.
+- **Dynamic UI Updates:** Updates the TextMesh Pro score display after each successful collection.
+- **Script Communication:** Works with `ChickenCollect.cs` to separate collection detection from score tracking.
+- **Code Reusability:** Uses a dedicated `UpdateScore()` method to manage changes to the displayed score.
+
+**Programming concepts demonstrated:** C# methods, integer variables, access modifiers, method calls, object references, string concatenation, Unity lifecycle methods, and UI programming.
 ## How to Open the Project
 
 1. Download or clone this repository.

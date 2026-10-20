@@ -61,6 +61,24 @@ Created a Windows application build to demonstrate the completed project.
 - Game asset organization
 - Version control with GitHub
 
+## Technical Implementation — C#
+
+### Egg Collection and Game Management
+
+Developed a `ChickenGameManager` script using C# and Unity to manage egg collection, score tracking, and win-condition logic.
+
+Key implementations include:
+
+- **Trigger Detection:** Uses Unity's `OnTriggerEnter()` method and object tags to identify collectible eggs.
+- **Score Tracking:** Increments the player's score when an egg is collected.
+- **UI Updates:** Dynamically updates the score display using Unity UI Text components.
+- **Object Management:** Removes collected eggs from the scene using `Destroy()`.
+- **Win Conditions:** Uses conditional statements to determine when the player reaches the required number of eggs and displays a victory message.
+- **Configurable Gameplay:** Exposes the required egg count through a public variable, allowing adjustments in the Unity Inspector.
+
+### Programming Concepts Demonstrated
+
+C# classes, variables, access modifiers, methods, conditional statements, comparison operators, Unity event methods, object references, and gameplay state management.
 ## How to Open the Project
 
 1. Download or clone this repository.

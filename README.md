@@ -1,2 +1,92 @@
-# ChickenChase-Unity-Game
-Unity game developed using C# with interactive gameplay, player controls, and game mechanics.
+# Chicken Chase | Unity Game Development
+
+## Project Overview
+
+Chicken Chase is a game development project created using Unity and C# as part of my undergraduate coursework in Web and Digital Design.
+
+The project explores interactive gameplay, game mechanics, object behavior, and programming fundamentals through the Unity game engine.
+
+This project demonstrates my growing experience with C# programming, game development workflows, and interactive digital experiences.
+
+## Technologies Used
+
+- **Unity** — Game development engine
+- **C#** — Gameplay programming and scripting
+- **Visual Studio** — Code development and debugging
+- **Git & GitHub** — Version control and source code management
+
+## Game Development Concepts
+
+Throughout development, I practiced:
+
+- Writing and modifying C# scripts
+- Working with Unity GameObjects and components
+- Implementing movement and object behavior
+- Using variables, methods, and conditional statements
+- Working with collision detection and physics
+- Testing and troubleshooting gameplay
+- Organizing scenes, scripts, and game assets
+
+## Project Structure
+
+- `Assets/` — Game scenes, scripts, textures, models, and other assets
+- `Packages/` — Unity package dependencies
+- `ProjectSettings/` — Unity project configuration
+
+## Development Process
+
+**1. Planning and Setup**
+
+Established the Unity project environment, reviewed gameplay objectives, and organized the required assets.
+
+**2. Gameplay Development**
+
+Used C# scripting and Unity components to develop interactive game behavior.
+
+**3. Testing and Debugging**
+
+Tested game functionality, identified issues, and adjusted scripts and settings to improve gameplay.
+
+**4. Final Build**
+
+Created a Windows application build to demonstrate the completed project.
+
+## Skills Demonstrated
+
+- C# programming fundamentals
+- Unity Editor navigation
+- Game mechanics implementation
+- Object-oriented programming concepts
+- Debugging and problem-solving
+- Game asset organization
+- Version control with GitHub
+
+## How to Open the Project
+
+1. Download or clone this repository.
+2. Open Unity Hub.
+3. Select **Add project from disk**.
+4. Choose the downloaded project folder.
+5. Open the project using a compatible Unity Editor version.
+6. Locate the main gameplay scene in the Assets folder and open it.
+7. Press **Play** to test the game.
+
+## Future Improvements
+
+- Refine gameplay mechanics
+- Improve the user interface
+- Add additional levels and challenges
+- Enhance animations and sound effects
+- Explore WebGL deployment for browser-based gameplay
+
+## Developer
+
+**London Medley**
+
+B.S. Web and Digital Design Student
+
+**Areas of Interest:** Game Development | C# Programming | Web Development | Digital Design
+
+---
+
+*Created as part of my game development learning journey.*

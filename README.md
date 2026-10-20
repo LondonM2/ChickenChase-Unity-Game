@@ -106,6 +106,20 @@ Key implementations include:
 - **Script Communication:** Works with `ChickenCollect.cs` to separate collection detection from score tracking.
 - **Code Reusability:** Uses a dedicated `UpdateScore()` method to manage changes to the displayed score.
 
+### Player Movement and Input Controls
+
+The `PlayerController.cs` script implements movement and turning mechanics using C# and Unity's Input System.
+
+Key implementations include:
+
+- **Input Handling:** Uses Unity's `InputAction` system to read two-dimensional movement input.
+- **Forward and Backward Movement:** Uses `transform.Translate()` to move the player along the local forward axis.
+- **Directional Rotation:** Uses `transform.Rotate()` to turn the player left and right based on horizontal input.
+- **Frame-Rate Independence:** Applies `Time.deltaTime` to movement and rotation calculations.
+- **Adjustable Movement Settings:** Exposes movement and turning speeds through public variables that can be modified in the Unity Inspector.
+- **Code Organization:** Separates input initialization in `Start()` from continuous movement updates in `Update()`.
+
+**Programming concepts demonstrated:** C# variables, data types, classes, methods, Unity transforms, vector mathematics, input handling, and frame-based game logic.
 **Programming concepts demonstrated:** C# methods, integer variables, access modifiers, method calls, object references, string concatenation, Unity lifecycle methods, and UI programming.
 ## How to Open the Project
 

@@ -1,152 +1,131 @@
-# Chicken Chase | Unity Game Development
+# Chicken Chase — Unity Game Development Project
 
-## Project Overview
+A Unity game development project created using C# as part of undergraduate coursework in Web and Digital Design.
 
-Chicken Chase is a game development project created using Unity and C# as part of my undergraduate coursework in Web and Digital Design.
-
-The project explores interactive gameplay, game mechanics, object behavior, and programming fundamentals through the Unity game engine.
-
-This project demonstrates my growing experience with C# programming, game development workflows, and interactive digital experiences.
+This project explores interactive gameplay mechanics, player controls, object collection, collision detection, scoring, camera tracking, and game-state management.
 
 ## Technologies Used
 
-- **Unity** — Game development engine
-- **C#** — Gameplay programming and scripting
-- **Visual Studio** — Code development and debugging
-- **Git & GitHub** — Version control and source code management
+- Unity Game Engine
+- C#
+- Unity Input System
+- Unity Physics and Rigidbody
+- TextMesh Pro
+- Unity Audio and Particle Systems
+- Git and GitHub
 
-## Game Development Concepts
+## Gameplay Systems
 
-Throughout development, I practiced:
+The project contains C# implementations for:
 
-- Writing and modifying C# scripts
-- Working with Unity GameObjects and components
-- Implementing movement and object behavior
-- Using variables, methods, and conditional statements
-- Working with collision detection and physics
-- Testing and troubleshooting gameplay
-- Organizing scenes, scripts, and game assets
+- **Player Movement:** Keyboard-controlled movement using Unity's Input System and alternative Rigidbody-based controls.
+- **Collectible Objects:** Trigger-based collection mechanics for chickens and eggs.
+- **Score Tracking:** Updating the player's collection count through C# methods and UI text.
+- **Player Lives:** A three-life system that triggers a Game Over state when lives reach zero.
+- **Obstacle Interactions:** Collision-based life reduction with audio and particle effects.
+- **Countdown Timer:** A configurable timer that updates the display and handles time expiration.
+- **Camera Tracking:** Camera-follow behavior using Vector3 offsets and Unity Transform methods.
+- **Movement Boundaries:** Player-position restrictions implemented using `Mathf.Clamp()`.
+- **Win Conditions:** Egg-collection logic that displays a victory message when the required number is reached.
+
+*These features are documented from the project's C# scripts. Some implementations may belong to different scenes or development stages.*
+
+## Technical Implementation
+
+### Player Controls
+
+Implemented multiple movement approaches using Unity's Input System, keyboard input, Transform manipulation, and Rigidbody movement.
+
+Used `Vector2` and `Vector3` to calculate movement directions, `Time.deltaTime` for frame-rate-independent Transform movement, and vector normalization to maintain consistent movement speed.
+
+### Object Collection and Scoring
+
+Created collectible-object scripts using trigger detection and Unity tags.
+
+Connected `ChickenCollect.cs` with `ScoreManager.cs` to update the collection count and display the results using TextMesh Pro.
+
+Implemented separate egg-collection and win-condition logic through `ChickenGameManager.cs`.
+
+### Lives and Obstacle Management
+
+Connected `FoodObstacle.cs` with `LifeManager.cs` to reduce the player's remaining lives when an obstacle is encountered.
+
+Integrated audio playback and optional particle effects to provide feedback during collisions.
+
+Implemented Game Over behavior that displays a message and pauses scaled gameplay when all lives are lost.
+
+### Timer and UI Management
+
+Created a configurable countdown timer using C# variables, conditional statements, and Unity's frame-update methods.
+
+Used TextMesh Pro and GameObject visibility controls to update and manage gameplay interface elements.
+
+### Camera and Environment Controls
+
+Implemented camera-follow behavior using Transform positions, Vector3 offsets, `Update()`, and `LateUpdate()`.
+
+Used `Mathf.Clamp()` to restrict player movement within designated gameplay boundaries.
+
+## C# Programming Skills Demonstrated
+
+- Classes and inheritance
+- Variables and data types
+- Public and private access modifiers
+- Methods and method calls
+- Conditional statements
+- Comparison and arithmetic operators
+- Vector mathematics
+- Event-driven programming
+- Unity lifecycle methods
+- Component references and script communication
+- Collision and trigger detection
+- GameObject management
+- User interface programming
 
 ## Project Structure
 
-- `Assets/` — Game scenes, scripts, textures, models, and other assets
-- `Packages/` — Unity package dependencies
-- `ProjectSettings/` — Unity project configuration
+```text
+ChickenChase-Unity-Game/
+├── Assets/
+│   └── Scripts/
+│       ├── CameraFollow.cs
+│       ├── ChickenCollect.cs
+│       ├── ChickenGameManager.cs
+│       ├── FollowPlayer.cs
+│       ├── FoodObstacle.cs
+│       ├── GameTimer.cs
+│       ├── GreyboxPlayerController.cs
+│       ├── LifeManager.cs
+│       ├── PlayerController.cs
+│       ├── PlayerMovement.cs
+│       └── ScoreManager.cs
+├── Packages/
+├── ProjectSettings/
+└── README.md
+```
 
-## Development Process
-
-**1. Planning and Setup**
-
-Established the Unity project environment, reviewed gameplay objectives, and organized the required assets.
-
-**2. Gameplay Development**
-
-Used C# scripting and Unity components to develop interactive game behavior.
-
-**3. Testing and Debugging**
-
-Tested game functionality, identified issues, and adjusted scripts and settings to improve gameplay.
-
-**4. Final Build**
-
-Created a Windows application build to demonstrate the completed project.
-
-## Skills Demonstrated
-
-- C# programming fundamentals
-- Unity Editor navigation
-- Game mechanics implementation
-- Object-oriented programming concepts
-- Debugging and problem-solving
-- Game asset organization
-- Version control with GitHub
-
-## Technical Implementation — C#
-
-### Egg Collection and Game Management
-
-Developed a `ChickenGameManager` script using C# and Unity to manage egg collection, score tracking, and win-condition logic.
-
-Key implementations include:
-
-- **Trigger Detection:** Uses Unity's `OnTriggerEnter()` method and object tags to identify collectible eggs.
-- **Score Tracking:** Increments the player's score when an egg is collected.
-- **UI Updates:** Dynamically updates the score display using Unity UI Text components.
-- **Object Management:** Removes collected eggs from the scene using `Destroy()`.
-- **Win Conditions:** Uses conditional statements to determine when the player reaches the required number of eggs and displays a victory message.
-- **Configurable Gameplay:** Exposes the required egg count through a public variable, allowing adjustments in the Unity Inspector.
-
-### Programming Concepts Demonstrated
-
-### Collectible Interaction System
-
-The `ChickenCollect.cs` script implements collectible-object interactions using Unity's trigger detection system.
-
-Key programming features include:
-
-- **Trigger Detection:** Uses `OnTriggerEnter()` to detect when another collider enters the collectible's trigger.
-- **Tag Validation:** Uses `CompareTag("Player")` to verify that the interacting object is the player.
-- **Script Communication:** References the `ScoreManager` component and calls its `AddChicken()` method to update the collection count.
-- **Object Management:** Uses `Destroy(gameObject)` to remove the collectible after a successful interaction.
-- **Modular Programming:** Separates collectible interactions from score management to organize gameplay logic.
-
-This script demonstrates C# methods, conditional statements, Unity components, object references, and event-driven programming.
-
-C# classes, variables, access modifiers, methods, conditional statements, comparison operators, Unity event methods, object references, and gameplay state management.
-
-### Score Management and User Interface
-
-The `ScoreManager.cs` script manages the player's chicken collection score and updates the on-screen display using Unity's TextMesh Pro system.
-
-Key implementations include:
-
-- **Score Initialization:** Initializes the player's score at zero.
-- **Score Incrementing:** Uses the `AddChicken()` method to increase the score when a chicken is collected.
-- **Dynamic UI Updates:** Updates the TextMesh Pro score display after each successful collection.
-- **Script Communication:** Works with `ChickenCollect.cs` to separate collection detection from score tracking.
-- **Code Reusability:** Uses a dedicated `UpdateScore()` method to manage changes to the displayed score.
-
-### Player Movement and Input Controls
-
-The `PlayerController.cs` script implements movement and turning mechanics using C# and Unity's Input System.
-
-Key implementations include:
-
-- **Input Handling:** Uses Unity's `InputAction` system to read two-dimensional movement input.
-- **Forward and Backward Movement:** Uses `transform.Translate()` to move the player along the local forward axis.
-- **Directional Rotation:** Uses `transform.Rotate()` to turn the player left and right based on horizontal input.
-- **Frame-Rate Independence:** Applies `Time.deltaTime` to movement and rotation calculations.
-- **Adjustable Movement Settings:** Exposes movement and turning speeds through public variables that can be modified in the Unity Inspector.
-- **Code Organization:** Separates input initialization in `Start()` from continuous movement updates in `Update()`.
-
-**Programming concepts demonstrated:** C# variables, data types, classes, methods, Unity transforms, vector mathematics, input handling, and frame-based game logic.
-**Programming concepts demonstrated:** C# methods, integer variables, access modifiers, method calls, object references, string concatenation, Unity lifecycle methods, and UI programming.
 ## How to Open the Project
 
-1. Download or clone this repository.
+1. Clone or download this repository.
 2. Open Unity Hub.
 3. Select **Add project from disk**.
 4. Choose the downloaded project folder.
 5. Open the project using a compatible Unity Editor version.
-6. Locate the main gameplay scene in the Assets folder and open it.
-7. Press **Play** to test the game.
+6. Open an available scene and run it in the Unity Editor.
 
 ## Future Improvements
 
-- Refine gameplay mechanics
-- Improve the user interface
-- Add additional levels and challenges
-- Enhance animations and sound effects
-- Explore WebGL deployment for browser-based gameplay
+- Consolidate movement scripts where appropriate.
+- Improve Rigidbody movement using `FixedUpdate()`.
+- Add restart and replay functionality.
+- Coordinate timer expiration with game-over behavior.
+- Refine camera tracking and collision feedback.
+- Create a playable build for portfolio demonstrations.
 
 ## Developer
 
 **London Medley**
 
-B.S. Web and Digital Design Student
+Web and Digital Design undergraduate developing skills in frontend web development, C# programming, Unity game development, and interactive digital experiences.
 
-**Areas of Interest:** Game Development | C# Programming | Web Development | Digital Design
-
----
-
-*Created as part of my game development learning journey.*
+GitHub: [LondonM2](https://github.com/LondonM2)
